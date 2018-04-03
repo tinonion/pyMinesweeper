@@ -1,8 +1,10 @@
 import gui
-import boardgen
+import tkinter as tk
 
-info_holder = gui.Info()
-root = gui.Root(info_holder)
-gui = gui.GUI(root.root, info_holder)
-boardgen.reset_board(gui)
-root.root.mainloop()
+# Pulls elements from all other project files to construct the master window, GUI and main event loop
+root = tk.Tk()
+root.title('pySweeper')
+info_holder = gui.Info(root)
+gui = gui.GUI(root, info_holder)
+root.mainloop()
+
